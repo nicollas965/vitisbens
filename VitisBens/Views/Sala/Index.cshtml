@@ -1,0 +1,55 @@
+@model List<Sala>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Salas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Lista de Salas</h1>
+        <a href="@Url.Action("Create", "Sala")" class="btn btn-primary">Cadastrar Nova Sala</a>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Piso</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+                <tbody>
+                    @foreach (var sala in Model)
+                    {
+                        <tr>
+                            <td>@sala.Id</td>
+                            <td>@sala.Codigo</td>
+                            <td>@sala.Nome</td>
+                            <td>@sala.Piso</td>
+                            <td>@sala.Descricao</td>
+                        </tr>
+                    }
+                </tbody>
+
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

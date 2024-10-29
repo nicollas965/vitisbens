@@ -1,0 +1,52 @@
+@model Sala
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Sala</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Cadastrar Sala</h1>
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label for="Codigo">Código:</label>
+                <input type="text" class="form-control" id="Codigo" name="Codigo" required />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Nome">Nome:</label>
+                <input type="text" class="form-control" id="Nome" name="Nome" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Piso">Piso:</label>
+                <input type="text" class="form-control" id="Piso" name="Piso" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Descricao">Descrição:</label>
+                <textarea class="form-control" id="Descricao" name="Descricao" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <a href="@Url.Action("Index", "Sala")" class="btn btn-secondary">Voltar</a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
